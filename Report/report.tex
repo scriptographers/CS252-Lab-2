@@ -1,0 +1,281 @@
+\documentclass[11pt, fleqn]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{enumitem}
+\usepackage[left=0.75in, right=0.75in, bottom=0.75in, top=1.0in]{geometry}
+\usepackage{floatrow}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{sectsty}
+\sectionfont{\centering}
+
+\usepackage[perpage]{footmisc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{190100036 \& 190100044 \& 190100055}
+\rhead{CS 252: Lab 2}
+\renewcommand{\footrulewidth}{1.0pt}
+\cfoot{Page \thepage}
+
+\setlength{\parindent}{0em}
+\renewcommand{\arraystretch}{2}
+
+\title{CS 252: Lab 2}
+\author{
+\begin{tabular}{|c|c|c|}
+     \hline
+     Krushnakant Bhattad & Devansh Jain & Harshit Varma \\
+     \hline
+     190100036 & 190100044 & 190100055 \\
+     \hline
+\end{tabular}
+}
+% \author{
+%   Krushnakant Bhattad\\
+%   190100036
+%   \and
+%   Devansh Jain\\
+%   190100044
+%   \and
+%   Harshit Varma\\
+%   190100055
+% }
+\date{\today}
+
+\usepackage{hyperref}
+
+\usepackage[dvipsnames]{xcolor}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+\renewcommand{\arraystretch}{1}
+
+\vspace{5em}
+\section*{About the report}
+
+
+\newpage 
+\section*{(i) \texttt{ifconfig}}
+\label{parta}
+\addcontentsline{toc}{section}{(i) \texttt{ifconfig}}
+\setcounter{equation}{0}
+
+\textbf{Network Interface Information:}
+\begin{itemize}
+ 
+    \item Team Member: Krushnakant Bhattad
+    \begin{itemize}[itemsep=-0.5ex]
+    \item Type: \texttt{wifi}
+    \item IPv4: \texttt{192.168.43.1    }
+    \item IPv6: \texttt{fe80::d85a:33ff:fef0:2d33 }  
+    \item MAC: \texttt{40:5b:d8:9b:c0:4d}
+    \item MTU: \texttt{1500}
+    \item Transmit Queue Length: \texttt{1000}
+    \end{itemize}
+    
+    \item Team Member: Devansh Jain
+    \begin{itemize}[itemsep=-0.5ex]
+        \item Type: \texttt{wifi}
+        \item IPv4: \texttt{192.168.29.249}
+        \item IPv6: \texttt{fe80::113d:1e1c:c608:4f93}
+        \item MAC: \texttt{dc:71:96:3c:31:ba}
+        \item MTU: \texttt{1500}
+        \item Transmit Queue Length: \texttt{1000}
+    \end{itemize}
+    
+    \item Team Member: Harshit Varma
+    \begin{itemize}[itemsep=-0.5ex]
+    \item Type: \texttt{Ethernet}\footnote{WSL vEthernet adapter: WSL-2 has a virtualized ethernet adapter with its own unique addresses}
+        \item IPv4: \texttt{172.23.207.194}
+        \item IPv6: \texttt{fe80::215:5dff:febd:ce13}
+        \item MAC: \texttt{00:15:5d:bd:ce:13}
+        \item MTU: \texttt{1500}
+        \item Transmit Queue Length: \texttt{1000}
+    \end{itemize}
+
+\end{itemize}
+
+\hrulefill
+\medskip
+
+\textbf{Number of bits used for:}
+\begin{itemize}[itemsep=-1ex]
+    \item IPv4: \texttt{32}
+    \item IPv6: \texttt{128}
+    \item MAC: \texttt{48}
+\end{itemize}
+
+\hrulefill
+\medskip 
+
+MTU stands for \textbf{Maximum Transmission Unit}, which defines the size of the largest protocol data unit (PDU) that can be communicated in a single network layer (layer-3) transaction. It is specified in terms of \textbf{bytes} or octets of the largest PDU that the layer can pass onwards. \footnote{Source:  \href{https://en.wikipedia.org/wiki/Maximum_transmission_unit}{Wikipedia} }
+
+\hrulefill
+\medskip
+
+Units for Transmit Length Queue: \textbf{packets}
+
+
+\newpage
+\section*{(ii) \texttt{traceroute <dest host IP or name>}}
+\label{partb}
+\addcontentsline{toc}{section}{(ii) \texttt{traceroute <dest host IP or name>}}
+\setcounter{equation}{0}
+
+Team Member: Harshit Varma\\
+Destination: \texttt{www.google.com}
+
+\hrulefill
+\smallskip
+
+Source: Local machine\\
+Number of hops: \texttt{8}\\
+Average RTT: \texttt{7.33}\\
+Destination IP: \texttt{216.58.203.36} (Mumbai) \footnote{\url{https://ipinfo.io/} was used for getting location from IP address, equivalently, the \texttt{whois} command can also be used}
+
+\hrulefill
+\smallskip
+
+Source: Tokyo (Japan, Asia)\\
+Number of hops: \texttt{5}\\
+Average RTT: $<$\texttt{1}\\
+Destination IP: \texttt{172.217.25.100} (Mountain View, California)
+
+\hrulefill
+\smallskip
+
+Source: Sydney (Australia)\\
+Number of hops: \texttt{10}\\
+Average RTT: \texttt{1}\\
+Destination IP: \texttt{142.250.66.196} (Sydney)
+
+\hrulefill
+\smallskip
+
+Source: Oslo (Norway, Europe)\\
+Number of hops: \texttt{11}\\
+Average RTT: \texttt{9.33}\\
+Destination IP: \texttt{142.250.74.36} (Mountain View, California)
+
+\hrulefill
+\smallskip
+
+Source: Buenos Aires (Argentina, South America)\\
+Number of hops: \texttt{9}\\
+Average RTT: \texttt{6.67}\\
+Destination IP: \texttt{172.217.172.228} (Buenos Aires)
+
+\hrulefill
+\smallskip
+
+Source: Los Angeles (USA, North America)\\
+Number of hops: \texttt{6}\\
+Average RTT: \texttt{1}\\
+Destination IP: \texttt{216.58.193.196} (Mountain View, California)
+
+\hrulefill
+\medskip
+
+The destination IP addresses changes when the source changes, even if the domain name is the same.
+
+\smallskip
+
+In fact, it even changes with time keeping the source and the destination fixed.\\ 
+For example, when \texttt{traceroute} was run again from the local machine, $\approx 10$ mins later, the destination IP address changed from \texttt{216.58.203.36} to \texttt{142.250.76.164} (also Mumbai) and then after $\approx 5$ mins, it reverted back to \texttt{216.58.203.36}, and then it changed to \texttt{216.58.200.196} (Zhengzhou, China), approximately $2$ mins later.
+
+\smallskip
+
+This is because when a client attempts to connect to Google, several DNS servers resolve \texttt{www.google.com} into multiple IP addresses via \textbf{Round Robin policy}. This acts as the first level of load balancing and directs the client to different Google cluster, which has thousands of server. \footnote{Reference: \url{https://en.wikipedia.org/wiki/Google_data_centers}}
+
+
+\newpage
+\section*{(iii) \texttt{ping <dest host>}}
+\label{partc}
+\addcontentsline{toc}{section}{(iii) \texttt{ping <dest host>}}
+\setcounter{equation}{0}
+
+Team Member: Harshit Varma
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.nasa.gov} \\
+Expected Location: \texttt{USA, North America}\\
+Average RTT using local machine: \texttt{8.433} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{27.153} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.gov.uk}\\
+Expected Location: \texttt{UK, Europe}\\
+Average RTT using local machine: \texttt{9.561} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{32.261} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.gov.au}\\
+Expected Location: \texttt{Australia}\\
+Average RTT using local machine: \texttt{24.009} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{7.797} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.statehouse.gov.ng}\\
+Expected Location: \texttt{Nigeria, Africa}\\
+Average RTT using local machine: \texttt{269.625} (34 transmitted, 16 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{151.545} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.gob.cl}\\
+Expected Location: \texttt{Chile, South America}\\
+Average RTT using local machine: \texttt{17.144} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{4.753} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.jnto.go.jp}\\
+Expected Location: \texttt{Japan, Asia}\\
+Average RTT using local machine: \texttt{24.113} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{26.369} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{comnap.aq}\footnote{Tried to ping \texttt{www.ats.aq, www.soki.aq, www.soos.aq} but no packets were returned}\\
+Expected Location: \texttt{Antarctica \footnote{A \texttt{traceroute} reveals that the actual location is Christchurch, New Zealand}}\\
+Average RTT using local machine: \texttt{189.067} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{295.686} (4 transmitted, 4 received)
+
+
+
+\newpage
+\section*{(iv) \texttt{Iperf}}
+\label{partd}
+\addcontentsline{toc}{section}{(iv) \texttt{Iperf}}
+\setcounter{equation}{0}
+
+
+\newpage
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+\setcounter{equation}{0}
+
+
+\end{document}
