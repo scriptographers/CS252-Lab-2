@@ -142,7 +142,7 @@ Destination: \texttt{www.google.com}
 Source: Local machine\\
 Number of hops: \texttt{8}\\
 Average RTT: \texttt{7.33}\\
-Destination IP: \texttt{216.58.203.36} (Mumbai) \footnote{\url{https://ipinfo.io/} was used for getting location from IP address, equivalently, the \texttt{whois} command can also be used}
+Destination IP: \texttt{172.17.112.70} (Mumbai) \footnote{\url{https://ipinfo.io/} was used for getting location from IP address, equivalently, the \texttt{whois} command can also be used}
 
 \hrulefill
 \smallskip
@@ -197,6 +197,60 @@ For example, when \texttt{traceroute} was run again from the local machine, $\ap
 \smallskip
 
 This is because when a client attempts to connect to Google, several DNS servers resolve \texttt{www.google.com} into multiple IP addresses via \textbf{Round Robin policy}. This acts as the first level of load balancing and directs the client to different Google cluster, which has thousands of server. \footnote{Reference: \url{https://en.wikipedia.org/wiki/Google_data_centers}}
+
+\newpage
+Team Member: Devansh Jain\\
+Destination: \texttt{www.cnn.com}
+
+\hrulefill
+\smallskip
+
+Source: Local machine\\
+Number of hops: \texttt{12}\\
+Average RTT: \texttt{77.5}\\
+Destination IP: \texttt{151.101.65.67} () \footnote{\url{https://ipinfo.io/} was used for getting location from IP address, equivalently, the \texttt{whois} command can also be used}
+
+\hrulefill
+\smallskip
+
+Source: Tokyo (Japan, Asia)\\
+Number of hops: \texttt{6}\\
+Average RTT: $<$\texttt{1}\\
+Destination IP: \texttt{151.101.1.67} (San Francisco, California)
+
+\hrulefill
+\smallskip
+
+Source: Sydney (Australia)\\
+Number of hops: \texttt{10}\\
+Average RTT: \texttt{<1}\\
+Destination IP: \texttt{151.101.29.67} (Sydney)
+
+\hrulefill
+\smallskip
+
+Source: Oslo (Norway, Europe)\\
+Number of hops: \texttt{7}\\
+Average RTT: \texttt{2}\\
+Destination IP: \texttt{151.101.1.67} (San Francisco, California)
+
+\hrulefill
+\smallskip
+
+Source: Buenos Aires (Argentina, South America)\\
+Number of hops: \texttt{11}\\
+Average RTT: \texttt{152}\\
+Destination IP: \texttt{151.101.5.67} ()
+
+\hrulefill
+\smallskip
+
+Source: Los Angeles (USA, North America)\\
+Number of hops: \texttt{5}\\
+Average RTT: \texttt{1.33}\\
+Destination IP: \texttt{151.101.25.67} ()
+
+\hrulefill
 
 
 \newpage
@@ -266,11 +320,203 @@ Average RTT using \texttt{ping.eu}: \texttt{295.686} (4 transmitted, 4 received)
 
 
 \newpage
+
+
+Team Member: Devansh Jain
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.canada.ca} \\
+Expected Location: \texttt{Canada, North America}\\
+Average RTT using local machine: \texttt{13.441} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{35.974} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.spth.gob.es}\\
+Expected Location: \texttt{Spain, Europe}\\
+Average RTT using local machine: \texttt{182.319} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{12.891} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.australia.gov.au}\\
+Expected Location: \texttt{Australia}\\
+Average RTT using local machine: \texttt{24.133} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{27.464} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.gov.za}\\
+Expected Location: \texttt{South Africa, Africa}\\
+Average RTT using local machine: \texttt{360.516} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{185.209} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.argentina.gob.ar}\\
+Expected Location: \texttt{Argentina, South America}\\
+Average RTT using local machine: \texttt{178.347} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{5.219} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.nepal.gov.np}\\
+Expected Location: \texttt{Nepal, Asia}\\
+Average RTT using local machine: \texttt{301.342} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{163.905} (4 transmitted, 4 received)
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.comnap.aq}\footnote{Tried to ping \texttt{www.ats.aq, www.soki.aq, www.soos.aq} but no packets were returned}\\
+Expected Location: \texttt{Antarctica \footnote{A \texttt{traceroute} reveals that the actual location is Christchurch, New Zealand}}\\
+Average RTT using local machine: \texttt{252.765} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{294.773} (4 transmitted, 4 received)
+
+
+
+\newpage
+
+
+Team Member: Krushnakant Bhattad
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.gob.mx} \\
+Expected Location: \texttt{Mexico, North America}\\
+Average RTT using local machine: \texttt{38.448 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{30.273 ms} (4 transmitted, 4 received)
+
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.admin.ch} \\
+Expected Location: \texttt{Switzerland, Europe}\\
+Average RTT using local machine: \texttt{255.733 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{27.594 ms} (4 transmitted, 4 received)
+
+
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.govt.nz} \\
+Expected Location: \texttt{New Zealand}\\
+Average RTT using local machine: \texttt{26.581 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{192.383 ms} (4 transmitted, 4 received)
+
+
+\hrulefill
+\smallskip
+
+Server: \texttt{www.pm.gov.tn} \footnote{Tried to ping \texttt{www.grnnet.gov.na, www.presidence.gov.mg, www.president.go.ke,} etc. but no packets were returned}\\
+Expected Location: \texttt{Tunisia, Africa}\\
+Average RTT using local machine: \texttt{253.009 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{46.893 ms} (4 transmitted, 4 received)
+
+
+\hrulefill
+\smallskip
+
+
+Server: \texttt{www.ttconnect.gov.tt} \\
+Expected Location: \texttt{Trinidad and Tobago, South America}\\
+Average RTT using local machine: \texttt{393.735 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{159.213 ms} (4 transmitted, 4 received)
+
+
+\hrulefill
+\smallskip
+
+
+Server: \texttt{www.gco.gov.qa} \\
+Expected Location: \texttt{Qatar, Asia}\\
+Average RTT using local machine: \texttt{22.229 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{5.193 ms} (4 transmitted, 4 received)
+
+
+
+
+\hrulefill
+\smallskip
+
+
+Server: \texttt{www.acap.aq} \\
+Expected Location: \texttt{Antarctica}\footnote{A \texttt{traceroute} reveals that the actual location is Sydney, 
+Australia}\\
+Average RTT using local machine: \texttt{212.604 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{248.566 ms} (4 transmitted, 4 received)
+
+
+
+\newpage
 \section*{(iv) \texttt{Iperf}}
 \label{partd}
 \addcontentsline{toc}{section}{(iv) \texttt{Iperf}}
 \setcounter{equation}{0}
 
+Team Member: Harshit Varma
+
+\hrulefill
+\smallskip
+
+% Command used: iperf3 -c <server_name> -u -b <value>M
+
+Server: \texttt{iperf.scottlinux.com} (California, USA)\\
+TCP Bandwidth:\\
+Sender: \texttt{51.0 Mbits/sec}\\
+Reciever: \texttt{48.9 Mbits/sec}
+
+For UDP:\\
+The observed throughput becomes much less than the specified UDP rate is \texttt{128 Mbits/sec}
+
+\hrulefill
+\smallskip
+
+Server: \texttt{speedtest.hostkey.ru} \footnote{Reference for the iperf server names: \url{https://iperf.cc/}} (Moscow, Russia)\\
+TCP Bandwidth:\\
+Sender: \texttt{52.1 Mbits/sec}\\
+Reciever: \texttt{52.1 Mbits/sec}
+
+\hrulefill
+\smallskip
+
+Server: \texttt{iperf.biznetnetworks.com} (Jakarta, Indonesia)\\
+TCP Bandwidth:\\
+Sender: \texttt{1.79 Mbits/sec}\\
+Reciever: \texttt{1.41 Mbits/sec}
+
+\hrulefill
+\medskip
+
+The ``Sender" is the client, the value mentioned is the upload speed from the client to the \texttt{iperf} server.\\
+The ``Receiver" is \texttt{iperf} server, the value mentioned is the download speed on \texttt{iperf} server for the client.\footnote{Reference: \url{https://github.com/esnet/iperf/issues/480#issuecomment-307205313}}
+
+\medskip
+
+I was often getting the following errors while trying to run \texttt{iperf}/\texttt{iperf3}:
+\begin{itemize}[itemsep=-0.5ex]
+
+    \item \texttt{iperf3: error - the server is busy running a test. try again later}\\
+    Changing the port number using \texttt{-p} flag sometimes seemed to resolve this issue.\\
+    Sometimes, running \texttt{iperf} instead of \texttt{iperf3} resolved this issue.
+    
+    \item \texttt{connect failed: No route to host}\\
+    This was observed while using \texttt{iperf}, couldn't find any fix for this, the same server worked using \texttt{iperf3} though
+    
+    \item \texttt{iperf3: error - unable to connect to server: Connection refused}\\
+    Got this error when trying to use different ports
+    
+\end{itemize}
 
 \newpage
 \section*{Appendix}
