@@ -472,38 +472,34 @@ Team Member: Harshit Varma
 % Command used: iperf3 -c <server_name> -u -b <value>M
 
 Server: \texttt{iperf.scottlinux.com} (California, USA)\\
-TCP Bandwidth:\\
-Sender: \texttt{51.0 Mbits/sec}\\
-Reciever: \texttt{48.9 Mbits/sec}
+\textbf{TCP Bandwidth:}\\
+Sender: \texttt{28.9 Mbits/sec}\\
+Reciever: \texttt{27.8 Mbits/sec}
 
-For UDP:\\
-The observed throughput becomes much less than the specified UDP rate is \texttt{128 Mbits/sec}
-
-\hrulefill
-\smallskip
-
-Server: \texttt{speedtest.hostkey.ru} \footnote{Reference for the iperf server names: \url{https://iperf.cc/}} (Moscow, Russia)\\
-TCP Bandwidth:\\
-Sender: \texttt{52.1 Mbits/sec}\\
-Reciever: \texttt{52.1 Mbits/sec}
-
-\hrulefill
-\smallskip
-
-Server: \texttt{iperf.biznetnetworks.com} (Jakarta, Indonesia)\\
-TCP Bandwidth:\\
-Sender: \texttt{1.79 Mbits/sec}\\
-Reciever: \texttt{1.41 Mbits/sec}
+\textbf{For UDP:}\\
+The observed throughput becomes much less than the specified UDP rate at \texttt{128 Mbits/sec}
 
 \hrulefill
 \medskip
+
+Server: \texttt{ping.online.net} (France)\\
+\textbf{TCP Bandwidth:}\\
+Sender: \texttt{27.6 Mbits/sec}\\
+Reciever: \texttt{25.8 Mbits/secc}
+
+\textbf{For UDP:}\\
+The observed throughput becomes much less than the specified UDP rate at \texttt{256 Mbits/sec}
+
+\hrulefill
+\medskip
+
 
 The ``Sender" is the client, the value mentioned is the upload speed from the client to the \texttt{iperf} server.\\
 The ``Receiver" is \texttt{iperf} server, the value mentioned is the download speed on \texttt{iperf} server for the client.\footnote{Reference: \url{https://github.com/esnet/iperf/issues/480#issuecomment-307205313}}
 
 \medskip
 
-I was often getting the following errors while trying to run \texttt{iperf}/\texttt{iperf3}:
+I was often getting the following errors while running \texttt{iperf}/\texttt{iperf3}:
 \begin{itemize}[itemsep=-0.5ex]
 
     \item \texttt{iperf3: error - the server is busy running a test. try again later}\\
@@ -517,6 +513,11 @@ I was often getting the following errors while trying to run \texttt{iperf}/\tex
     Got this error when trying to use different ports
     
 \end{itemize}
+
+\hrulefill
+\medskip
+
+In both cases, we observe that the UDP rates are much more than the TCP ones.
 
 \newpage
 \section*{Appendix}
