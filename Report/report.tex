@@ -14,6 +14,7 @@
 \usepackage{sectsty}
 \sectionfont{\centering}
 
+
 \usepackage[perpage]{footmisc}
 
 \usepackage{fancyhdr}
@@ -49,8 +50,6 @@
 % }
 \date{\today}
 
-\usepackage{hyperref}
-
 \usepackage[dvipsnames]{xcolor}
 
 \begin{document}
@@ -60,9 +59,6 @@
 \thispagestyle{empty}
 \setcounter{page}{0}
 \renewcommand{\arraystretch}{1}
-
-\vspace{5em}
-\section*{About the report}
 
 
 \newpage 
@@ -205,31 +201,31 @@ Destination: \texttt{www.cnn.com}
 \hrulefill
 \smallskip
 
-Source: Local machine\\
+Source: Local machine (Gujarat, India)\\
 Number of hops: \texttt{12}\\
 Average RTT: \texttt{77.5}\\
-Destination IP: \texttt{151.101.65.67} () \footnote{\url{https://ipinfo.io/} was used for getting location from IP address, equivalently, the \texttt{whois} command can also be used}
+Destination IP: \texttt{151.101.65.67} (San Francisco, California) \footnote{\url{https://ping.eu/ns-whois/} was used for getting location from IP address, equivalently, the \texttt{whois} command can also be used}
 
 \hrulefill
 \smallskip
 
-Source: Tokyo (Japan, Asia)\\
+Source: Jakarta (Indonesia, Asia)\\
 Number of hops: \texttt{6}\\
-Average RTT: $<$\texttt{1}\\
-Destination IP: \texttt{151.101.1.67} (San Francisco, California)
+Average RTT: \texttt{13}\\
+Destination IP: \texttt{151.101.9.67} (San Francisco, California)
 
 \hrulefill
 \smallskip
 
-Source: Sydney (Australia)\\
-Number of hops: \texttt{10}\\
-Average RTT: \texttt{<1}\\
-Destination IP: \texttt{151.101.29.67} (Sydney)
+Source: Auckland (New Zealand)\\
+Number of hops: \texttt{5}\\
+Average RTT: \texttt{1}\\
+Destination IP: \texttt{151.101.165.67} (San Francisco, California)
 
 \hrulefill
 \smallskip
 
-Source: Oslo (Norway, Europe)\\
+Source: Amsterdam (Netherlands, Europe)\\
 Number of hops: \texttt{7}\\
 Average RTT: \texttt{2}\\
 Destination IP: \texttt{151.101.1.67} (San Francisco, California)
@@ -240,7 +236,7 @@ Destination IP: \texttt{151.101.1.67} (San Francisco, California)
 Source: Buenos Aires (Argentina, South America)\\
 Number of hops: \texttt{11}\\
 Average RTT: \texttt{152}\\
-Destination IP: \texttt{151.101.5.67} ()
+Destination IP: \texttt{151.101.5.67} (San Francisco, California)
 
 \hrulefill
 \smallskip
@@ -248,9 +244,107 @@ Destination IP: \texttt{151.101.5.67} ()
 Source: Los Angeles (USA, North America)\\
 Number of hops: \texttt{5}\\
 Average RTT: \texttt{1.33}\\
-Destination IP: \texttt{151.101.25.67} ()
+Destination IP: \texttt{151.101.25.67} (San Francisco, California)
 
 \hrulefill
+
+All the destination IP are located in San Francisco, irrespective of the source. \\
+CNN is headquartered in US and one possible explanation of the above observation is that CNN uses a cluster of servers located at the same location (facility) for service.
+
+
+\newpage
+Team Member: Krushnakant Bhattad \footnote{For this experiment, \url{https://tools.keycdn.com/traceroute} was used 
+for all external sources except Sao Paulo, instead of uptrends, since uptrends wasn't working as expected. }\\
+Destination: \texttt{www.iitd.ac.in}
+
+\hrulefill
+\smallskip
+
+Source: Local machine (Maharashtra, India)\\
+Number of hops: \texttt{17}\\
+Average RTT: \texttt{42 ms}\\
+Destination IP: \texttt{103.27.9.24} (New Delhi)  \footnote{
+\url{https://ping.eu/ns-whois/} was used for 
+getting information from IP address, to confirm location}
+
+
+\hrulefill
+\smallskip
+
+Source: Frankfurt (Germany, Europe)\\
+Number of hops: \texttt{19}\\
+Average RTT: \texttt{190 ms}\\
+Destination IP: \texttt{103.27.9.24} (New Delhi)  
+
+
+\hrulefill
+\smallskip
+
+Source: New York (USA, North America) \\
+Number of hops: \texttt{17}\\
+Average RTT: \texttt{213 ms}\\
+Destination IP: \texttt{103.27.9.24} (New Delhi)  
+
+
+\hrulefill
+\smallskip
+
+Source: Singapore (Republic of Singapore, South East Asia)\\
+Number of hops: \texttt{15}\\
+Average RTT: \texttt{74 ms}\\
+Destination IP: \texttt{103.27.9.24} (New Delhi)  
+
+
+\hrulefill
+\smallskip
+
+Source: Sydney (Australia)\\
+Number of hops: \texttt{23}\\
+Average RTT: \texttt{281 ms}\\
+Destination IP: \texttt{103.27.9.24} (New Delhi)  
+
+
+\hrulefill
+\smallskip
+
+Source: São Paulo (Brazil, South America)\\
+Number of hops: \texttt{19}\\
+Average RTT: \texttt{356 ms}\\
+Destination IP: \texttt{103.27.9.24} (New Delhi)  
+
+% \hrulefill
+% \smallskip
+
+% Source: Tokyo (Japan, Far East Asia)\\
+% Number of hops: \texttt{13}\\
+% Average RTT: \texttt{144 ms}\\
+% Destination IP: \texttt{103.27.9.24} (New Delhi)  
+
+\hrulefill
+\medskip
+
+All the destination IP Addresses are same for the same url \texttt{www.iitd.ac.in}, irrespective of the source. 
+Also, for, say \texttt{www.cse.iitd.ac.in}, the IP address responding is always \texttt{103.27.9.152}, 
+irrespective of source. Location for all servers was New Delhi, probably some Computer-Center in the institute.
+
+This points towards a possibility that IIT-Delhi has designated a certain server
+for responding to a specific url, like, the server with IP \texttt{103.27.9.24} will 
+respond to requests for \texttt{www.iitd.ac.in}; while the server with IP 
+\texttt{103.27.9.152} will respond to requests for \texttt{www.cse.iitd.ac.in}. 
+
+\newpage
+\subsection*{Destination: \texttt{iitb.ac.in}}
+
+When we tried performing \texttt{traceroute} for \texttt{www.iitb.ac.in} 
+[and other iitb urls], it reveals the destination IP address (located in Powai) but the traceroute never reaches that.\\
+The last IP address detected (for all sources), 
+was \texttt{115.110.234.170}, identified with Tata Communications Limited. After this, we only received \texttt{* * *} as the output.\\
+This is most probably becuase the IITB network system is blanketed with a VPN.
+
+\smallskip
+After connecting to the IITB-VPN, the traceroute instantly reaches the private IP for \texttt{iitb.ac.in} in a single hop.\\
+Interestingly, (when on IITB-VPN) the route to most other addresses (including \texttt{www.google.com}) passes 
+through \texttt{vpn4profsoumen.iitb.ac.in}
 
 
 \newpage
@@ -266,56 +360,57 @@ Team Member: Harshit Varma
 
 Server: \texttt{www.nasa.gov} \\
 Expected Location: \texttt{USA, North America}\\
-Average RTT using local machine: \texttt{8.433} (15 transmitted, 15 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{27.153} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{8.433 ms} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{27.153 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.gov.uk}\\
 Expected Location: \texttt{UK, Europe}\\
-Average RTT using local machine: \texttt{9.561} (15 transmitted, 15 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{32.261} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{9.561 ms} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{32.261 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.gov.au}\\
 Expected Location: \texttt{Australia}\\
-Average RTT using local machine: \texttt{24.009} (15 transmitted, 15 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{7.797} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{24.009 ms} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{7.797 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.statehouse.gov.ng}\\
 Expected Location: \texttt{Nigeria, Africa}\\
-Average RTT using local machine: \texttt{269.625} (34 transmitted, 16 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{151.545} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{269.625 ms} (34 transmitted, 16 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{151.545 ms} (4 transmitted, 4 received)
+
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.gob.cl}\\
 Expected Location: \texttt{Chile, South America}\\
-Average RTT using local machine: \texttt{17.144} (15 transmitted, 15 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{4.753} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{17.144 ms} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{4.753 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.jnto.go.jp}\\
 Expected Location: \texttt{Japan, Asia}\\
-Average RTT using local machine: \texttt{24.113} (15 transmitted, 15 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{26.369} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{24.113 ms} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{26.369 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{comnap.aq}\footnote{Tried to ping \texttt{www.ats.aq, www.soki.aq, www.soos.aq} but no packets were returned}\\
 Expected Location: \texttt{Antarctica \footnote{A \texttt{traceroute} reveals that the actual location is Christchurch, New Zealand}}\\
-Average RTT using local machine: \texttt{189.067} (15 transmitted, 15 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{295.686} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{189.067 ms} (15 transmitted, 15 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{295.686 ms} (4 transmitted, 4 received)
 
 
 
@@ -329,61 +424,58 @@ Team Member: Devansh Jain
 
 Server: \texttt{www.canada.ca} \\
 Expected Location: \texttt{Canada, North America}\\
-Average RTT using local machine: \texttt{13.441} (20 transmitted, 20 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{35.974} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{13.441 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{35.974 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.spth.gob.es}\\
 Expected Location: \texttt{Spain, Europe}\\
-Average RTT using local machine: \texttt{182.319} (20 transmitted, 20 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{12.891} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{182.319 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{12.891 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.australia.gov.au}\\
 Expected Location: \texttt{Australia}\\
-Average RTT using local machine: \texttt{24.133} (20 transmitted, 20 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{27.464} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{24.133 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{27.464 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.gov.za}\\
 Expected Location: \texttt{South Africa, Africa}\\
-Average RTT using local machine: \texttt{360.516} (20 transmitted, 20 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{185.209} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{360.516 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{185.209 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.argentina.gob.ar}\\
 Expected Location: \texttt{Argentina, South America}\\
-Average RTT using local machine: \texttt{178.347} (20 transmitted, 20 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{5.219} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{178.347 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{5.219 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.nepal.gov.np}\\
 Expected Location: \texttt{Nepal, Asia}\\
-Average RTT using local machine: \texttt{301.342} (20 transmitted, 20 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{163.905} (4 transmitted, 4 received)
+Average RTT using local machine: \texttt{301.342 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{163.905 ms} (4 transmitted, 4 received)
 
 \hrulefill
 \smallskip
 
 Server: \texttt{www.comnap.aq}\footnote{Tried to ping \texttt{www.ats.aq, www.soki.aq, www.soos.aq} but no packets were returned}\\
 Expected Location: \texttt{Antarctica \footnote{A \texttt{traceroute} reveals that the actual location is Christchurch, New Zealand}}\\
-Average RTT using local machine: \texttt{252.765} (20 transmitted, 20 received)\\
-Average RTT using \texttt{ping.eu}: \texttt{294.773} (4 transmitted, 4 received)
-
-
+Average RTT using local machine: \texttt{252.765 ms} (20 transmitted, 20 received)\\
+Average RTT using \texttt{ping.eu}: \texttt{294.773 ms} (4 transmitted, 4 received)
 
 \newpage
-
 
 Team Member: Krushnakant Bhattad
 
@@ -404,8 +496,6 @@ Expected Location: \texttt{Switzerland, Europe}\\
 Average RTT using local machine: \texttt{255.733 ms} (20 transmitted, 20 received)\\
 Average RTT using \texttt{ping.eu}: \texttt{27.594 ms} (4 transmitted, 4 received)
 
-
-
 \hrulefill
 \smallskip
 
@@ -418,37 +508,30 @@ Average RTT using \texttt{ping.eu}: \texttt{192.383 ms} (4 transmitted, 4 receiv
 \hrulefill
 \smallskip
 
-Server: \texttt{www.pm.gov.tn} \footnote{Tried to ping \texttt{www.grnnet.gov.na, www.presidence.gov.mg, www.president.go.ke,} etc. but no packets were returned}\\
+Server: \texttt{www.pm.gov.tn} \footnote{Tried to ping 
+\texttt{www.grnnet.gov.na} (Namibia), \texttt{www.presidence.gov.mg} (Madagascar), \texttt{www.president.go.ke} \\ (Kenya), etc. but no packets were returned}\\
 Expected Location: \texttt{Tunisia, Africa}\\
 Average RTT using local machine: \texttt{253.009 ms} (20 transmitted, 20 received)\\
 Average RTT using \texttt{ping.eu}: \texttt{46.893 ms} (4 transmitted, 4 received)
 
-
 \hrulefill
 \smallskip
-
 
 Server: \texttt{www.ttconnect.gov.tt} \\
 Expected Location: \texttt{Trinidad and Tobago, South America}\\
 Average RTT using local machine: \texttt{393.735 ms} (20 transmitted, 20 received)\\
 Average RTT using \texttt{ping.eu}: \texttt{159.213 ms} (4 transmitted, 4 received)
 
-
 \hrulefill
 \smallskip
-
 
 Server: \texttt{www.gco.gov.qa} \\
 Expected Location: \texttt{Qatar, Asia}\\
 Average RTT using local machine: \texttt{22.229 ms} (20 transmitted, 20 received)\\
 Average RTT using \texttt{ping.eu}: \texttt{5.193 ms} (4 transmitted, 4 received)
 
-
-
-
 \hrulefill
 \smallskip
-
 
 Server: \texttt{www.acap.aq} \\
 Expected Location: \texttt{Antarctica}\footnote{A \texttt{traceroute} reveals that the actual location is Sydney, 
@@ -456,6 +539,39 @@ Australia}\\
 Average RTT using local machine: \texttt{212.604 ms} (20 transmitted, 20 received)\\
 Average RTT using \texttt{ping.eu}: \texttt{248.566 ms} (4 transmitted, 4 received)
 
+\hrulefill
+
+\newpage 
+
+\subsection*{Inferences:}
+
+\subsubsection*{Dependence on Geographical Proximity:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{rtt-vs-dist.jpg}
+    \caption{Source: O. Krajsa and L. Fojtova, ``RTT measurement and its dependence on the real geographical distance"}
+    \label{fig:rtt_vs_dist}
+\end{figure}
+
+We observe that the RTT does somewhat increase with increase in the geographical distance.\\
+%However, since the transmitted ``signal" (being an electromagnetic wave) travels at the speed of light,  
+%The time for travelling geographical distance (on the wire) is really low, as compared to, say, 
+The time delay caused by the number of routers the signal has to travel through, server response time, the network traffic, etc. also affects the RTT. \footnote{Reference:
+\url{https://www.cloudflare.com/en-gb/learning/cdn/glossary/round-trip-time-rtt/}}\\
+A much more extensive analysis was performed by O. Krajsa and L. Fojtova \footnote{O. Krajsa and L. Fojtova, ``RTT measurement and its dependence on the real geographical distance", 2011 34th International Conference on Telecommunications and Signal Processing (TSP), Budapest, 2011, pp. 231-234, doi: 10.1109/TSP.2011.6043737.} who claimed that the dependence of RTT on the geographical distance can be for some cases considered as a linear function.
+
+% There is a loose ``direct proportion" relationship between geographical distance and the RTT.
+% However, since the transmitted ``signal" (being an electromagnetic wave)
+% travels at the speed of light, %(which is extremely fast even in non-vacuum media), 
+% the time for travelling geographical distance (on the wire) is really low, 
+% as compared to, say, the time delay caused by the number of routers the
+% signal has to travel through, server response time, the network traffic, etc., the latter dominates.\footnote{Reference used:
+% \url{https://www.cloudflare.com/en-gb/learning/cdn/glossary/round-trip-time-rtt/}}
+
+\subsubsection*{Dependence on the Country}
+We also observe that less developed countries (like Trinidad and Tobago, Tunisia, Nepal, etc) have much higher RTTs than the developed ones.\\ 
+For a contrasting example, the RTT to Nepal was about \texttt{301.342 ms} while the RTT to Australia (which is much further geographically) was only \texttt{24.133 ms}
 
 
 \newpage
@@ -463,6 +579,19 @@ Average RTT using \texttt{ping.eu}: \texttt{248.566 ms} (4 transmitted, 4 receiv
 \label{partd}
 \addcontentsline{toc}{section}{(iv) \texttt{Iperf}}
 \setcounter{equation}{0}
+
+\subsection*{Terminology: }
+
+
+The ``Sender" is the client, the value mentioned is the upload speed from the client to the \texttt{iperf} server.\\
+The ``Receiver" is \texttt{iperf} server, the value mentioned is the download speed 
+on \texttt{iperf} server for the client.\footnote{Reference: \url{https://github.com/esnet/iperf/issues/480\#issuecomment-307205313}}
+
+\hrulefill
+
+\bigskip 
+
+\subsection*{Observations: }
 
 Team Member: Harshit Varma
 
@@ -482,7 +611,7 @@ The observed throughput becomes much less than the specified UDP rate at \texttt
 \hrulefill
 \medskip
 
-Server: \texttt{ping.online.net} (France)\\
+Server: \texttt{ping.online.net} (\^{i}le-de-france, France)\\
 \textbf{TCP Bandwidth:}\\
 Sender: \texttt{27.6 Mbits/sec}\\
 Reciever: \texttt{25.8 Mbits/secc}
@@ -490,16 +619,73 @@ Reciever: \texttt{25.8 Mbits/secc}
 \textbf{For UDP:}\\
 The observed throughput becomes much less than the specified UDP rate at \texttt{256 Mbits/sec}
 
+\hrulefill 
+~\\
+
+\medskip
+
+Team Member: Devansh Jain
+
+\hrulefill
+\smallskip
+
+% Command used: iperf3 -c <server_name> -u -b <value>M
+
+Server: \texttt{ping6.online.net} (\^{i}le-de-france, France)\\
+\textbf{TCP Bandwidth:}\\
+Sender: \texttt{3.19 Mbits/sec}\\
+Reciever: \texttt{2.70 Mbits/sec}
+
+\textbf{For UDP:}\\
+The observed throughput becomes much less than the specified UDP rate at \texttt{256 Mbits/sec}
+
 \hrulefill
 \medskip
 
+Server: \texttt{speedtest.serverius.net} (Netherlands)\\
+\textbf{TCP Bandwidth:}\\
+Sender: \texttt{2.6 Mbits/sec}\\
+Reciever: \texttt{2.2 Mbits/secc}
 
-The ``Sender" is the client, the value mentioned is the upload speed from the client to the \texttt{iperf} server.\\
-The ``Receiver" is \texttt{iperf} server, the value mentioned is the download speed on \texttt{iperf} server for the client.\footnote{Reference: \url{https://github.com/esnet/iperf/issues/480#issuecomment-307205313}}
+\textbf{For UDP:}\\
+The observed throughput becomes much less than the specified UDP rate at \texttt{128 Mbits/sec}
 
-\medskip
+\hrulefill
 
-I was often getting the following errors while running \texttt{iperf}/\texttt{iperf3}:
+
+\newpage
+
+Team Member: Krushnakant Bhattad
+
+\hrulefill
+
+\smallskip
+
+Server: \texttt{bouygues.testdebit.info} (Colombes, France)\\
+\textbf{TCP Bandwidth:}\\
+Sender: \texttt{8.00 Mbits/sec}\\
+Receiver: \texttt{5.60 Mbits/sec}
+
+
+\textbf{For UDP:}\\
+The observed throughput becomes much less than the specified UDP rate at \texttt{128 Mbits/sec}
+
+\hrulefill
+\smallskip
+
+Server: \texttt{iperf.volia.net} (Kremenchug, Ukraine)\\
+\textbf{TCP Bandwidth:}\\
+Sender: \texttt{7.77 Mbits/sec}\\
+Receiver: \texttt{5.60 Mbits/sec}
+
+\textbf{For UDP:}\\
+The observed throughput becomes much less than the specified UDP rate at \texttt{128 Mbits/sec}
+
+\hrulefill
+
+\subsection*{Errors}
+
+We were often getting the following errors while running \texttt{iperf}/\texttt{iperf3}:
 \begin{itemize}[itemsep=-0.5ex]
 
     \item \texttt{iperf3: error - the server is busy running a test. try again later}\\
@@ -514,15 +700,10 @@ I was often getting the following errors while running \texttt{iperf}/\texttt{ip
     
 \end{itemize}
 
-\hrulefill
-\medskip
+\subsection*{Conclusions: }
 
-In both cases, we observe that the UDP rates are much more than the TCP ones.
+In both the cases for all team members, it was a common observation that the UDP rates are higher than the TCP ones.
 
-\newpage
-\section*{Appendix}
-\addcontentsline{toc}{section}{Appendix}
-\setcounter{equation}{0}
-
-
+\textbf{Expected reason:} As observed, UDP is much faster than TCP. This may be because TCP does retransmission of packet losses and congestion control, whereas UDP does not do either. There is no overhead for opening a connection, maintaining a connection, and terminating a connection in UDP, whereas TCP requires this \footnote{\url{https://www.geeksforgeeks.org/differences-between-tcp-and-udp/}}. Although UDP is faster, TCP is more ``reliable" due to the same reasons listed above. Thus, there seems to be a tradeoff between ``reliability" and speed.
+ 
 \end{document}
